@@ -13,7 +13,9 @@ export class AppComponent {
   addTodo(event: KeyboardEvent) {
     console.log(event);
     let inputElem = <HTMLInputElement>event.target;
-    this.todos.push(inputElem.value);
+    if (inputElem.value) {
+      this.todos.push(inputElem.value);
+    }
   }
 
 }
