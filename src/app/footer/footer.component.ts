@@ -23,9 +23,18 @@ export class FooterComponent implements OnInit {
 
   tooMore: boolean = false;
 
+  filterType: string = 'All';
+
+  @Output() filterTypeChange = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changeFilterType(filterType: string) {
+    this.filterType = filterType;
+    this.filterTypeChange.emit(filterType);
   }
 
 }
