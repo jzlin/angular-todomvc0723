@@ -18,4 +18,8 @@ export class AppComponent {
     }
   }
 
+  todoChange(event) {
+    this.todo = event;
+  }
+
 }
