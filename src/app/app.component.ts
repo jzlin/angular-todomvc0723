@@ -81,4 +81,16 @@ export class AppComponent implements OnInit {
     });
   }
 
+  enterEditMode(todo) {
+    todo.editText = todo.text;
+    todo.isEditMode = true;
+  }
+
+  leaveEditMode(todo) {
+    todo.text = todo.editText;
+    delete todo.editText;
+    delete todo.isEditMode;
+    this.updateTodo(todo);
+  }
+
 }
